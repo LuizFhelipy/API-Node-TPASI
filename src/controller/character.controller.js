@@ -17,20 +17,84 @@ const listAll = async (req, res) => {
 }
 //get de um character
 const listOne = async (req, res) => {
+    var id = req.params.id;
+    var url = urlBaseMarvel + '/' + id + '?ts=' + ts + '&apikey=' + apikey + '&hash=' + hash;
 
-    var url = urlBaseMarvel + '/id?ts=' + ts + '&apikey=' + apikey + '&hash=' + hash;
 
-    await axios.get(url, req.query.id).then(async function (response) {
-        console.log(url);
+    await axios.get(url).then(async function (response) {
         res.status(200).send(response.data);
     }).catch(function (error) {
-        console.log(url);
+        res.status(404).send({
+            message: 'character with id (${id}) not found'
+        });
     });
 }
 
+//get character comics
+const listcharactercomics = async (req, res) => {
+    var id = req.params.id;
+    var url = urlBaseMarvel + '/' + id + '/comics' + '?ts=' + ts + '&apikey=' + apikey + '&hash=' + hash;
 
+
+    await axios.get(url).then(async function (response) {
+        res.status(200).send(response.data);
+    }).catch(function (error) {
+        res.status(404).send({
+            message: 'character with id (${id}) not found'
+        });
+    });
+}
+
+//get character events
+const listcharacterevents = async (req, res) => {
+    var id = req.params.id;
+    var url = urlBaseMarvel + '/' + id + '/events' + '?ts=' + ts + '&apikey=' + apikey + '&hash=' + hash;
+
+
+    await axios.get(url).then(async function (response) {
+        res.status(200).send(response.data);
+    }).catch(function (error) {
+        res.status(404).send({
+            message: 'character with id (${id}) not found'
+        });
+    });
+}
+
+//get character series
+const listcharacterseries = async (req, res) => {
+    var id = req.params.id;
+    var url = urlBaseMarvel + '/' + id + '/series' + '?ts=' + ts + '&apikey=' + apikey + '&hash=' + hash;
+
+
+    await axios.get(url).then(async function (response) {
+        res.status(200).send(response.data);
+    }).catch(function (error) {
+        res.status(404).send({
+            message: 'character with id (${id}) not found'
+        });
+    });
+}
+
+//get character stories
+const listcharacterstories = async (req, res) => {
+    var id = req.params.id;
+    var url = urlBaseMarvel + '/' + id + '/stories' + '?ts=' + ts + '&apikey=' + apikey + '&hash=' + hash;
+
+
+    await axios.get(url).then(async function (response) {
+        res.status(200).send(response.data);
+    }).catch(function (error) {
+        res.status(404).send({
+            message: 'character with id (${id}) not found'
+        });
+    });
+}
 
 module.exports = {
     listAll,
-    listOne
+    listOne,
+    listcharactercomics,
+    listcharacterevents,
+    listcharacterseries,
+    listcharacterstories
 };
