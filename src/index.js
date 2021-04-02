@@ -1,5 +1,4 @@
 const express = require('express');
-const controller = require('./controller/character.controller');
 const router = require('./routes/characterRoute');
 
 
