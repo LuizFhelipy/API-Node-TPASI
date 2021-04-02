@@ -13,8 +13,8 @@ const urlBaseMarvel = 'http://gateway.marvel.com/v1/public/characters?';
 router.get('/v1/public/characters', async (req, res) => {
     var url = urlBaseMarvel + 'ts=' + ts + '&apikey=' + apikey + '&hash=' + hash;
     await axios.get(url).then(async function (r) {
-
-        res.status(200).send(r);
+        console.log(r);
+        res.status(200).send(r.data.data.results);
     });
 
 });
