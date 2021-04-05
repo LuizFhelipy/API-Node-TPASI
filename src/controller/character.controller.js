@@ -9,7 +9,7 @@ const urlBaseMarvel = 'http://gateway.marvel.com/v1/public/characters';
 
 //get de todos os characters
 const listAll = async (req, res) => {
-    var url = urlBaseMarvel + '?ts=' + ts + '&apikey=' + apikey + '&hash=' + hash;
+    var url = urlBaseMarvel + gethash();
     await axios.get(url).then(async function (response) {
         res.status(200).send(response.data);
     });
@@ -18,7 +18,7 @@ const listAll = async (req, res) => {
 //get de um character
 const listOne = async (req, res) => {
     var id = req.params.id;
-    var url = urlBaseMarvel + '/' + id + '?ts=' + ts + '&apikey=' + apikey + '&hash=' + hash;
+    var url = urlBaseMarvel + '/' + id + gethash();
 
 
     await axios.get(url).then(async function (response) {
@@ -33,7 +33,7 @@ const listOne = async (req, res) => {
 //get character comics
 const listcharactercomics = async (req, res) => {
     var id = req.params.id;
-    var url = urlBaseMarvel + '/' + id + '/comics' + '?ts=' + ts + '&apikey=' + apikey + '&hash=' + hash;
+    var url = urlBaseMarvel + '/' + id + '/comics' + gethash();
 
 
     await axios.get(url).then(async function (response) {
@@ -48,7 +48,7 @@ const listcharactercomics = async (req, res) => {
 //get character events
 const listcharacterevents = async (req, res) => {
     var id = req.params.id;
-    var url = urlBaseMarvel + '/' + id + '/events' + '?ts=' + ts + '&apikey=' + apikey + '&hash=' + hash;
+    var url = urlBaseMarvel + '/' + id + '/events' + gethash();
 
 
     await axios.get(url).then(async function (response) {
@@ -63,7 +63,7 @@ const listcharacterevents = async (req, res) => {
 //get character series
 const listcharacterseries = async (req, res) => {
     var id = req.params.id;
-    var url = urlBaseMarvel + '/' + id + '/series' + '?ts=' + ts + '&apikey=' + apikey + '&hash=' + hash;
+    var url = urlBaseMarvel + '/' + id + '/series' + gethash();
 
 
     await axios.get(url).then(async function (response) {
@@ -78,7 +78,7 @@ const listcharacterseries = async (req, res) => {
 //get character stories
 const listcharacterstories = async (req, res) => {
     var id = req.params.id;
-    var url = urlBaseMarvel + '/' + id + '/stories' + '?ts=' + ts + '&apikey=' + apikey + '&hash=' + hash;
+    var url = urlBaseMarvel + '/' + id + '/stories' + gethash();
 
 
     await axios.get(url).then(async function (response) {
@@ -88,6 +88,11 @@ const listcharacterstories = async (req, res) => {
             message: `character stories with id (${id}) not found`
         });
     });
+}
+
+//função de reutilização de código
+function gethash() {
+    return '?ts=' + ts + '&apikey=' + apikey + '&hash=' + hash;
 }
 
 module.exports = {
