@@ -25,7 +25,7 @@ const listOne = async (req, res) => {
         res.status(200).send(response.data);
     }).catch(function (error) {
         res.status(404).send({
-            message: 'character with id (${id}) not found'
+            message: `character with id (${id}) not found`
         });
     });
 }
@@ -40,7 +40,7 @@ const listcharactercomics = async (req, res) => {
         res.status(200).send(response.data);
     }).catch(function (error) {
         res.status(404).send({
-            message: 'character with id (${id}) not found'
+            message: `character with id (${id}) not found`
         });
     });
 }
@@ -55,7 +55,7 @@ const listcharacterevents = async (req, res) => {
         res.status(200).send(response.data);
     }).catch(function (error) {
         res.status(404).send({
-            message: 'character with id (${id}) not found'
+            message: `character with id (${id}) not found`
         });
     });
 }
@@ -70,7 +70,7 @@ const listcharacterseries = async (req, res) => {
         res.status(200).send(response.data);
     }).catch(function (error) {
         res.status(404).send({
-            message: 'character with id (${id}) not found'
+            message: `character with id (${id}) not found`
         });
     });
 }
@@ -85,7 +85,7 @@ const listcharacterstories = async (req, res) => {
         res.status(200).send(response.data);
     }).catch(function (error) {
         res.status(404).send({
-            message: 'character with id (${id}) not found'
+            message: `character with id (${id}) not found`
         });
     });
 }
