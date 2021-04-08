@@ -1,8 +1,8 @@
 const axios = require('axios');
 
-const ts = '1617309428';
-const apikey = '7f4986d1e7942fe8d08b5bd80d9ac4ec'
-const hash = '53546b20796d97c4f27a4f200309b7a5';
+const ts = process.env.ts;
+const apikey = process.env.apikey;
+const hash = process.env.hash;
 
 const urlBaseMarvel = 'http://gateway.marvel.com/v1/public/characters';
 

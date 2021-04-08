@@ -8,5 +8,5 @@ app.use(express.json());
 app.use('/', router);
 
 app.listen(process.env.PORT || 8081, () => {
-    console.log('Server started on port 8081')
+    console.log('Server started')
 })
