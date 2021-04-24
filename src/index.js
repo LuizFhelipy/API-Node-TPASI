@@ -19,7 +19,7 @@ const swaggerOptions = {
             servers: ['http://localhost:8081']
         }
     },
-    apis: ['./routes/characterRoute']
+    apis: ['./routes/characterRoute.js']
 };
 
 const swaggerDocs = swaggerJSDoc(swaggerOptions);
