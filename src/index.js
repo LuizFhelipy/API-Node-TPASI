@@ -1,5 +1,5 @@
 const express = require('express');
-import swaggerJsdoc from 'swagger-jsdoc';
+const swaggerJSDoc = require('swagger-jsdoc');
 const router = require('./routes/characterRoute');
 const swaggerUi = require('swagger-ui-express');
 const app = express();
@@ -19,10 +19,10 @@ const swaggerOptions = {
             servers: ['http://localhost:8081']
         }
     },
-    apis: ['./routes/*.js'],
+    apis: ['./routes/characterRoute']
 };
 
-const swaggerDocs = swaggerJsdoc(swaggerOptions);
+const swaggerDocs = swaggerJSDoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 // Routes
