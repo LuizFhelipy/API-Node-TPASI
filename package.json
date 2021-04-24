@@ -15,7 +15,13 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
+    "dockerfile": "^0.1.1",
     "express": "^4.17.1",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "swagger-jsdoc": "^3.4.0",
+    "swagger-ui-express": "^4.0.7"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.4"
   }
 }
