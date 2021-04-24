@@ -1,5 +1,5 @@
 const express = require('express');
-const swaggerJSDoc = require('swagger-jsdoc');
+import swaggerJsdoc from 'swagger-jsdoc';
 const router = require('./routes/characterRoute');
 const swaggerUi = require('swagger-ui-express');
 const app = express();
@@ -16,13 +16,13 @@ const swaggerOptions = {
                 description: 'Amazing Devs',
                 email: 'lucassaldanha80@hotmail.com'
             },
-            servers: ['http://localhost:5000']
+            servers: ['http://localhost:8081']
         }
     },
-    apis: ['./routes/characterRoute']
+    apis: ['./routes/*.js'],
 };
 
-const swaggerDocs = swaggerJSDoc(swaggerOptions);
+const swaggerDocs = swaggerJsdoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 // Routes
