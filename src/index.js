@@ -16,7 +16,7 @@ const swaggerOptions = {
                 description: 'Amazing Devs',
                 email: 'lucassaldanha80@hotmail.com'
             },
-            servers: ['http://localhost:8081']
+            servers: ['http://localhost:5000']
         }
     },
     apis: ['./routes/characterRoute']
