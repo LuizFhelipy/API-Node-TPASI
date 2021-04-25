@@ -1,29 +1,29 @@
 const express = require('express');
-const swaggerJSDoc = require('swagger-jsdoc');
+const swaggerJSDoc = require('../documentation.json');
 const router = require('./routes/characterRoute');
 const swaggerUi = require('swagger-ui-express');
 const app = express();
 
 //Documentação server SwaggerHub: https://app.swaggerhub.com/apis/BlazeF35/API_marvel/1.0.0
-const swaggerOptions = {
-    swaggerDefinition: {
-        info: {
-            title: 'MarvelAPI',
-            description: 'API Marvel mostrando personagens e seus quadrinhos',
-            version: '1.0.0',
-            contact: {
-                name: 'Luiz Fhelipy Rodrigues Teixeira & Lucas Saldanha Santos Pereira',
-                description: 'Amazing Devs',
-                email: 'lucassaldanha80@hotmail.com'
-            },
-            servers: ['http://localhost:8081']
-        }
-    },
-    apis: ['./routes/characterRoute.js']
-};
+// const swaggerOptions = {
+//     swaggerDefinition: {
+//         info: {
+//             title: 'MarvelAPI',
+//             description: 'API Marvel mostrando personagens e seus quadrinhos',
+//             version: '1.0.0',
+//             contact: {
+//                 name: 'Luiz Fhelipy Rodrigues Teixeira & Lucas Saldanha Santos Pereira',
+//                 description: 'Amazing Devs',
+//                 email: 'lucassaldanha80@hotmail.com'
+//             },
+//             servers: ['http://localhost:8081']
+//         }
+//     },
+//     apis: ['./routes/characterRoute.js']
+// };
 
-const swaggerDocs = swaggerJSDoc(swaggerOptions);
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+//const swaggerDocs = swaggerJSDoc(swaggerOptions);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerJSDoc));
 
 // Routes
 /**
