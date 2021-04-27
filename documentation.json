@@ -1,11 +1,11 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "API Marvel",
+    "description": "Trabalho de Tópicos Avançados de SI",
     "version": "1.0.0",
     "title": "Marvel API",
     "contact": {
-      "email": "lucassaldanha80@hotmail.com, fhelipy_rt@hotmail.com"
+      "email": "lucassaldanha80@hotmail.com"
     },
     "license": {
       "name": "node 14.16.0",
@@ -16,22 +16,18 @@
   "basePath": "/BlazeF35/API_marvel/1.0.0",
   "tags": [
     {
-      "name": "admins",
-      "description": "string"
-    },
-    {
       "name": "Luiz Fhelipy Rodrigues Teixeira & Lucas Saldanha Santos Pereira",
-      "description": "API da Marvel"
+      "description": "Documentação API MARVEL"
     }
   ],
   "schemes": [
     "https"
   ],
   "paths": {
-    "/inventory": {
+    "/v1/public/characters": {
       "get": {
         "summary": "API disponibilizada pela Marvel",
-        "description": "Lista todos os nomes dos persoangens, revistas em quadrinho e sua data de lançamento",
+        "description": "Lista todos os nomes dos persoangens, revistas em quadrinhos, sua data de lançamento e arco da história",
         "consumes": [
           "application/json"
         ],
@@ -41,34 +37,203 @@
         "parameters": [
           {
             "in": "body",
-            "name": "nome de personagens/quadrinhos/data de lançamento",
-            "description": "mostra os nomes de persoangens, revistas em quadrinhos relacionadas e sua data de lançamento",
+            "name": "id/comics/events/series/stories",
+            "description": "Exemplo de corpo da requisição",
             "required": false,
             "schema": {
-              "$ref": "#/definitions/InventoryItem"
+              "$ref": "#/definitions/CharacterItems"
             }
           }
         ],
         "responses": {
-          "201": {
-            "description": "Requisição realizada"
+          "200": {
+            "description": "Status Ok"
           },
           "400": {
-            "description": "Erro de requisição"
+            "description": "Error"
           },
           "500": {
-            "description": "Erro interno no servidor"
+            "description": "Internal Error"
+          }
+        }
+      }
+    },
+    "/v1/public/characters/:id": {
+      "get": {
+        "summary": "API disponibilizada pela Marvel",
+        "description": "Busca um único personagem pelo id",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "id personagem",
+            "description": "Exemplo corpo da requisição",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CharacterId"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status Ok"
+          },
+          "400": {
+            "description": "Error"
+          },
+          "500": {
+            "description": "Internal Error"
+          }
+        }
+      }
+    },
+    "/v1/public/characters/:id/comics": {
+      "get": {
+        "summary": "API disponibilizada pela Marvel",
+        "description": "Busca uma história em quadrinho",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Nome dos quadrinhos",
+            "description": "Exemplo corpo da requisição",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CharacterComics"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status Ok"
+          },
+          "400": {
+            "description": "Error"
+          },
+          "500": {
+            "description": "Internal Error"
+          }
+        }
+      }
+    },
+    "/v1/public/characters/:id/events": {
+      "get": {
+        "summary": "API disponibilizada pela Marvel",
+        "description": "Busca a data de lançamento e a duração do arco de história",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Data de lançamento e duração do arco de história",
+            "description": "Exemplo corpo da requisição",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CharacterEvents"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status Ok"
+          },
+          "400": {
+            "description": "Error"
+          },
+          "500": {
+            "description": "Internal Error"
+          }
+        }
+      }
+    },
+    "/v1/public/characters/:id/series": {
+      "get": {
+        "summary": "API disponibilizada pela Marvel",
+        "description": "Busca o tema do arco de história",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Tema",
+            "description": "Exemplo corpo da requisição",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CharacterSeries"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status Ok"
+          },
+          "400": {
+            "description": "Error"
+          },
+          "500": {
+            "description": "Internal Error"
+          }
+        }
+      }
+    },
+    "/v1/public/characters/:id/stories": {
+      "get": {
+        "summary": "API disponibilizada pela Marvel",
+        "description": "Busca o arco de história",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Arco de história",
+            "description": "Exemplo corpo da requisição",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CharacterStories"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status Ok"
+          },
+          "400": {
+            "description": "Error"
+          },
+          "500": {
+            "description": "Internal Error"
           }
         }
       }
     }
   },
   "definitions": {
-    "InventoryItem": {
+    "CharacterItems": {
       "type": "string",
       "required": [
         "id",
-        "name",
         "series",
         "stories"
       ],
@@ -78,14 +243,14 @@
           "format": "uuid",
           "example": "1011334"
         },
-        "name": {
+        "Comics": {
           "type": "string",
-          "example": "Iron Man"
+          "example": "Avengers"
         },
-        "releaseDate": {
+        "events": {
           "type": "string",
-          "format": "date-time",
-          "example": "1963-03-23 / 12:33:00"
+          "format": "date",
+          "example": "2007 - 2010"
         },
         "series": {
           "type": "string",
@@ -93,10 +258,49 @@
         },
         "stories": {
           "type": "string",
-          "example": "Invencible Iron Man"
-        },
-        "manufacturer": {
-          "$ref": "#/definitions/Manufacturer"
+          "example": "Avengers The Iniciative"
+        }
+      }
+    },
+    "CharacterId": {
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "example": "1011334"
+        }
+      }
+    },
+    "CharacterComics": {
+      "properties": {
+        "Comics": {
+          "type": "string",
+          "example": "Avengers"
+        }
+      }
+    },
+    "CharacterEvents": {
+      "properties": {
+        "events": {
+          "type": "string",
+          "format": "date",
+          "example": "2007 - 2010"
+        }
+      }
+    },
+    "CharacterSeries": {
+      "properties": {
+        "series": {
+          "type": "string",
+          "example": "Avengers Assemble"
+        }
+      }
+    },
+    "CharacterStories": {
+      "properties": {
+        "stories": {
+          "type": "string",
+          "example": "Avengers The Iniciative"
         }
       }
     },
