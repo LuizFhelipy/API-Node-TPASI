@@ -19,7 +19,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/LuizFhelipy/API-Node-TPASI.git1>
+$ git clone <https://github.com/LuizFhelipy/API-Node-TPASI.git>
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd API-Node-TPASI
