@@ -4,9 +4,9 @@
 <p align="center">🚀 API feita com base na API da Marvel para a disciplina de Tópicos Avançados em SI</p>
 
 <p align="center">
- <a href="https://app.swaggerhub.com/apis/BlazeF35/API_marvel/1.0.0">Swagger Documentation</a> •
- <a href="https://api-marvel-trabalho.herokuapp.com/">Link Heroku</a> • 
- <a href="https://hub.docker.com/repository/docker/luizfhelipy/api_marvel_verse">DockerHub Image</a> • 
+ <a href="https://app.swaggerhub.com/apis/BlazeF35/marvel-api/1.0.0">Documentação Swagger</a> •
+ <a href="https://api-marvel-trabalho.herokuapp.com/">Deploy Heroku</a> • 
+ <a href="https://hub.docker.com/repository/docker/luizfhelipy/api_marvel_verse">Imagem no DockerHub</a> • 
 </p>
 
 ### Pré-requisitos
