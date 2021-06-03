@@ -4,20 +4,18 @@ const expect = chai.expect
 const controller = require('../../src/controller/character.controller')
 
 describe('Character Controller sucess', () => {
-  
-    const myCharacter = {
-        id: 1011334
-    }
+
+  const myCharacter = {
+    id: 1011334
+  }
 
   it('Call listAll method should shows all characters', () => {
     const req = {}
     const res = {}
-    res.status = (200)
+    res.status = () => res
     res.send = sinon.spy()
 
     controller.listAll(req, res)
-
-    const parameter = res.send.firstCall.args[0]
     expect(res.send.calledOnce).to.be.true
   })
 
@@ -30,7 +28,7 @@ describe('Character Controller sucess', () => {
     }
 
     const res = {}
-    res.status = (200)
+    res.status = () => res
     res.send = sinon.spy()
 
     controller.listOne(req, res)
@@ -46,7 +44,7 @@ describe('Character Controller sucess', () => {
     }
 
     const res = {}
-    res.status = (200)
+    res.status = () => res
     res.send = sinon.spy()
 
     controller.listcharactercomics(req, res)
@@ -62,7 +60,7 @@ describe('Character Controller sucess', () => {
     }
 
     const res = {}
-    res.status = (200)
+    res.status = () => res
     res.send = sinon.spy()
 
     controller.listcharacterevents(req, res)
@@ -78,7 +76,7 @@ describe('Character Controller sucess', () => {
     }
 
     const res = {}
-    res.status = (200)
+    res.status = () => res
     res.send = sinon.spy()
 
     controller.listcharacterseries(req, res)
@@ -94,7 +92,7 @@ describe('Character Controller sucess', () => {
     }
 
     const res = {}
-    res.status = (200)
+    res.status = () => res
     res.send = sinon.spy()
 
     controller.listcharacterstories(req, res)
