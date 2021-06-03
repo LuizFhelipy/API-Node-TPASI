@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/index.js",
-    "test": "nyc mocha --reporter spec src/test/**/*.js"
+    "test": "nyc mocha --reporter spec test/**/*.js"
   },
   "keywords": [
     "node",
