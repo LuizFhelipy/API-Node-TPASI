@@ -2,6 +2,7 @@ const express = require('express');
 const swaggerJSDoc = require('../documentation.json');
 const router = require('./routes/characterRoute');
 const swaggerUi = require('swagger-ui-express');
+const { nodeModuleNameResolver } = require('typescript');
 const app = express();
 
 app.use(express.json());
