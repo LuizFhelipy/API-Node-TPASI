@@ -12,3 +12,5 @@ app.use('/', router, swaggerUi.serve, swaggerUi.setup(swaggerJSDoc));
 app.listen(process.env.PORT || 8081, () => {
     console.log('Server started')
 })
+
+module.exports = app;
