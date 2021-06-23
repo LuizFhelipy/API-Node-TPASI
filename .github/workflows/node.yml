@@ -22,4 +22,4 @@ jobs:
 
       - name: run unit test with Jest
         run: npm test
-        working-directory: ./test/controller/charactercontroller.test.js
+        working-directory: ./test/controller/charactercontroller.test.js ./
