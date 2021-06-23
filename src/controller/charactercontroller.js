@@ -1,9 +1,4 @@
 const axios = require('axios');
-
-const ts = process.env.ts;
-const apikey = process.env.apikey;
-const hash = process.env.hash;
-
 const urlBaseMarvel = 'http://gateway.marvel.com/v1/public/characters';
 
 
@@ -92,6 +87,9 @@ const listcharacterstories = async (req, res) => {
 
 //função de reutilização de código
 function gethash() {
+    const ts = process.env.ts;
+    const apikey = process.env.apikey;
+    const hash = process.env.hash;
     return '?ts=' + ts + '&apikey=' + apikey + '&hash=' + hash;
 }
 
