@@ -1,18 +1,5 @@
-const express = require('express');
-const swaggerJSDoc = require('../documentation.json');
-const router = require('./routes/characterRoute');
-const swaggerUi = require('swagger-ui-express');
-const { nodeModuleNameResolver } = require('typescript');
-const app = express();
-
-require("dotenv").config()
-
-app.use(express.json());
-app.use('/', router, swaggerUi.serve, swaggerUi.setup(swaggerJSDoc));
-//app.use('/', router);
+const app = require('./server')
 
 app.listen(process.env.PORT || 8081, () => {
     console.log('Server started')
 })
-
-module.exports = app;
