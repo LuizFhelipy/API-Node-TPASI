@@ -27,6 +27,9 @@ $ cd API-Node-TPASI
 # Instale as dependências
 $ npm install
 
+# Rode os testes
+$ npm tests
+
 # Execute a aplicação
 $ npm start
 
@@ -39,6 +42,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - [Express](https://expressjs.com/pt-br/)
 - [Node.js](https://nodejs.org/en/)
+- [Jest](https://jestjs.io/)
+- [Axios](https://www.npmjs.com/package/axios)
 
 <h4 align="center"> 
 	🚧  API-Marvel 🚀 Finalizado!  🚧
