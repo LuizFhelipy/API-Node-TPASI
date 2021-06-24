@@ -28,7 +28,7 @@ $ cd API-Node-TPASI
 $ npm install
 
 # Rode os testes
-$ npm tests
+$ npm test
 
 # Execute a aplicação
 $ npm start
