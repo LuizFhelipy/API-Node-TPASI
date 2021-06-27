@@ -33,7 +33,7 @@ $ npm test
 # Execute a aplicação
 $ npm start
 
-# O servidor inciará na porta:8081 - acesse <http://localhost:8081>
+# O servidor inciará na porta:8081 - acesse <http://localhost:8081/v1/public/characters>
 ```
 
 ### 🛠 Tecnologias
