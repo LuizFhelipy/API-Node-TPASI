@@ -6,7 +6,7 @@
 <p align="center">
  <a href="https://app.swaggerhub.com/apis/BlazeF35/marvel-api/1.0.0">Documentação Swagger</a> •
  <a href="https://api-marvel-trabalho.herokuapp.com/">Deploy Heroku</a> • 
- <a href="https://hub.docker.com/repository/docker/luizfhelipy/api_marvel_verse">Imagem no DockerHub</a> • 
+ <a href="https://hub.docker.com/r/luizfhelipy/marveltrab">Imagem no DockerHub</a> • 
 </p>
 
 ### Pré-requisitos
