@@ -46,5 +46,5 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Axios](https://www.npmjs.com/package/axios)
 
 <h4 align="center"> 
-	🚧  API-Marvel 🚀 Finalizado!  🚧
+	🚧  API-Marvel 🚀 Finalizada!  🚧
 </h4>
